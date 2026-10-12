@@ -1,0 +1,75 @@
+{
+  "bench": "x402 Agent Commerce Bench",
+  "version": "0.1",
+  "run": "2026-10-12",
+  "results": [
+    {
+      "model": "@cf/qwen/qwen3.8-27b",
+      "score": 3,
+      "total": 10,
+      "pct": 30.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "100000",
+          "pass": true,
+          "secs": 4.1
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "We need answer user's question. Need compute value to sign for x402? Paid AI API $1.50 per request, HTTP 402 accepts[0] ",
+          "pass": false,
+          "secs": 4.7
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000",
+          "pass": true,
+          "secs": 2.4
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "We need answer user's question. Need think in English? User English. Need final only address. Need determine exact value",
+          "pass": false,
+          "secs": 25.8
+        },
+        {
+          "id": "field_payto",
+          "answer": "0xD98",
+          "pass": false,
+          "secs": 4.0
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "We need answer user's multiple choice. Need think. User asks: \"You POST to a paid API without a payment header and recei",
+          "pass": false,
+          "secs": 5.2
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 1.9
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "The user is asking for the correct EIP-712 domain name and version for Circle USDC on Base mainnet (chainId 8453, token ",
+          "pass": false,
+          "secs": 13.4
+        },
+        {
+          "id": "error_handling",
+          "answer": "The user is asking a multiple-choice question about x402 payment protocol best practices.\nThe scenario: Paid via x402, g",
+          "pass": false,
+          "secs": 4.7
+        },
+        {
+          "id": "network_trap",
+          "answer": "We need answer user's multiple choice. Need only letter. Need think. User asks: x402 challenge says network eip155:7788 ",
+          "pass": false,
+          "secs": 4.2
+        }
+      ]
+    }
+  ]
+}

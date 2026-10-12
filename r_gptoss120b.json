@@ -1,0 +1,75 @@
+{
+  "bench": "x402 Agent Commerce Bench",
+  "version": "0.1",
+  "run": "2026-10-12",
+  "results": [
+    {
+      "model": "@cf/openai/gpt-oss-120b",
+      "score": 7,
+      "total": 10,
+      "pct": 70.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "100000",
+          "pass": true,
+          "secs": 1.9
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "1500000",
+          "pass": true,
+          "secs": 2.4
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000",
+          "pass": true,
+          "secs": 2.5
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "__ERROR__ 'NoneType' object has no attribute 'strip'",
+          "pass": false,
+          "secs": 23.4
+        },
+        {
+          "id": "field_payto",
+          "answer": "__ERROR__ 'NoneType' object has no attribute 'strip'",
+          "pass": false,
+          "secs": 18.6
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "B",
+          "pass": true,
+          "secs": 1.0
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.8
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "<|start|>",
+          "pass": false,
+          "secs": 8.9
+        },
+        {
+          "id": "error_handling",
+          "answer": "B",
+          "pass": true,
+          "secs": 1.8
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 1.5
+        }
+      ]
+    }
+  ]
+}

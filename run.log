@@ -1,0 +1,188 @@
+== @cf/meta/llama-3.3-70b-instruct-fp8-fast
+  amount_basic       PASS  100000
+  amount_pricing     FAIL  1.5
+  amount_rounding    PASS  25000
+  field_fidelity     PASS  0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+  field_payto        PASS  0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8
+  retry_semantics    PASS  B
+  retry_no_sig       PASS  B
+  eip3009_domain     PASS  A
+  error_handling     PASS  B
+  network_trap       PASS  B
+  => 9/10 (90.0%)
+
+saved /root/x402bench/r_llama-3_3-70b-instruct-fp8-fast.json
+== @cf/openai/gpt-oss-120b
+  amount_basic       PASS  100000
+  amount_pricing     PASS  1500000
+  amount_rounding    PASS  25000
+  field_fidelity     PASS  0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+  field_payto        PASS  0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8
+  retry_semantics    PASS  B
+  retry_no_sig       PASS  B
+  eip3009_domain     PASS  A
+  error_handling     PASS  B
+  network_trap       PASS  B
+  => 10/10 (100.0%)
+
+saved /root/x402bench/r_gpt-oss-120b.json
+== @cf/deepseek-ai/deepseek-v4-pro-0813
+  amount_basic       PASS  100000
+  amount_pricing     FAIL  __EMPTY__ length
+  amount_rounding    PASS  25000
+  field_fidelity     PASS  0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+  field_payto        FAIL  0xD98b6969fab
+  retry_semantics    FAIL  __EMPTY__ length
+  retry_no_sig       PASS  B
+  eip3009_domain     PASS  A
+  error_handling     FAIL  __EMPTY__ length
+  network_trap       PASS  B
+  => 6/10 (60.0%)
+
+saved /root/x402bench/r_deepseek-v4-pro-0813.json
+== @cf/moonshotai/kimi-k2.6
+  amount_basic       FAIL  __EMPTY__ length
+  amount_pricing     FAIL  __EMPTY__ length
+  amount_rounding    PASS  25000
+  field_fidelity     FAIL  __EMPTY__ length
+  field_payto        FAIL  __EMPTY__ length
+  retry_semantics    FAIL  __EMPTY__ length
+  retry_no_sig       FAIL  __EMPTY__ length
+  eip3009_domain     FAIL  __EMPTY__ length
+  error_handling     FAIL  __EMPTY__ length
+  network_trap       FAIL  __EMPTY__ length
+  => 1/10 (10.0%)
+
+saved /root/x402bench/r_kimi-k2_6.json
+== @cf/qwen/qwen3.8-27b
+  amount_basic       PASS  100000
+  amount_pricing     FAIL  We need answer user's question. Need compute value to sign f
+  amount_rounding    PASS  25000
+  field_fidelity     FAIL  We need answer user's question. Need think in English? User 
+  field_payto        FAIL  0xD98
+  retry_semantics    FAIL  We need answer user's multiple choice. Need think. User asks
+  retry_no_sig       PASS  B
+  eip3009_domain     FAIL  The user is asking for the correct EIP-712 domain name and v
+  error_handling     FAIL  The user is asking a multiple-choice question about x402 pay
+  network_trap       FAIL  We need answer user's multiple choice. Need only letter. Nee
+  => 3/10 (30.0%)
+
+saved /root/x402bench/r_qwen3_8-27b.json
+== @cf/meta/llama-4-scout-17b-16e-instruct
+  amount_basic       FAIL  0.10
+  amount_pricing     FAIL  1.50 * 10^6
+  amount_rounding    PASS  25000.000000
+  field_fidelity     PASS  0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+  field_payto        PASS  0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8
+  retry_semantics    PASS  B
+  retry_no_sig       PASS  B
+  eip3009_domain     FAIL  D
+  error_handling     PASS  B
+  network_trap       PASS  B
+  => 7/10 (70.0%)
+
+saved /root/x402bench/r_llama-4-scout-17b-16e-instruct.json
+== @cf/mistralai/mistral-small-3.1-24b-instruct
+  amount_basic       PASS  100000
+  amount_pricing     PASS  1500000
+  amount_rounding    FAIL  25000000
+  field_fidelity     PASS  0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+  field_payto        PASS  0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8
+  retry_semantics    PASS  B
+  retry_no_sig       PASS  B
+  eip3009_domain     FAIL  C
+  error_handling     PASS  B
+  network_trap       PASS  B
+  => 8/10 (80.0%)
+
+saved /root/x402bench/r_mistral-small-3_1-24b-instruct.json
+== @cf/zai-org/glm-4.7-flash
+  amount_basic       FAIL  1.  **Analyze the Request:**
+    *   **Context:** An x402 AP
+  amount_pricing     FAIL  1.  **Analyze the Request:**
+    *   API Price: $1.50 per re
+  amount_rounding    FAIL  1.  **Analyze the Request:**
+    *   Input: "A x402 challeng
+  field_fidelity     FAIL  1.  **Analyze the Request:**
+    *   **Input:** An HTTP 402 
+  field_payto        FAIL  1.  **Analyze the Request:**
+    *   **Context:** HTTP 402 c
+  retry_semantics    FAIL  1.  **Analyze the Request:**
+    *   **Scenario:** POST to a
+  retry_no_sig       FAIL  1.  **Analyze the user's request:** The user wants a single 
+  eip3009_domain     FAIL  1.  **Analyze the Request:**
+    *   **Token:** x402 v2 (Cir
+  error_handling     FAIL  1.  **Analyze the User's Scenario:**
+    *   **Action:** Pai
+  network_trap       FAIL  1.  **Analyze the User's Request:**
+    *   **Context:** An 
+  => 0/10 (0.0%)
+
+saved /root/x402bench/r_glm-4_7-flash.json
+== @cf/deepseek-ai/deepseek-r1-distill-qwen-32b
+  amount_basic       FAIL  <think>
+Okay, so I need to figure out what value to put in t
+  amount_pricing     FAIL  <think>
+Okay, so I'm trying to figure out what value I need 
+  amount_rounding    FAIL  <think>
+Okay, so I need to figure out the value of 0.025 USD
+  field_fidelity     FAIL  <think>
+Okay, so I need to figure out the correct value for 
+  field_payto        FAIL  <think>
+Okay, so I'm trying to figure out this HTTP 402 chal
+  retry_semantics    FAIL  <think>
+Okay, so I'm trying to figure out what the correct n
+  retry_no_sig       FAIL  <think>
+Okay, so I'm trying to figure out what the agent sho
+  eip3009_domain     FAIL  <think>
+Okay, so I need to figure out the correct EIP-712 do
+  error_handling     FAIL  <think>
+Okay, so I'm trying to figure out the best practice 
+  network_trap       FAIL  <think>
+Okay, so I need to figure out the correct answer to 
+  => 0/10 (0.0%)
+
+saved /root/x402bench/r_deepseek-r1-distill-qwen-32b.json
+== @cf/meta/llama-3.1-8b-instruct-fp8
+  amount_basic       FAIL  0.001
+  amount_pricing     FAIL  0.000001
+  amount_rounding    FAIL  0.000025
+  field_fidelity     PASS  0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+  field_payto        FAIL  to: 0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8
+  retry_semantics    PASS  B)
+  retry_no_sig       PASS  B
+  eip3009_domain     FAIL  C
+  error_handling     PASS  B
+  network_trap       PASS  B
+  => 5/10 (50.0%)
+
+saved /root/x402bench/r_llama-3_1-8b-instruct-fp8.json
+== @cf/ibm-granite/granite-4.0-h-micro
+  amount_basic       FAIL  0.10
+  amount_pricing     FAIL  1000000
+  amount_rounding    FAIL  40200000
+  field_fidelity     PASS  0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+  field_payto        PASS  0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8
+  retry_semantics    PASS  B
+  retry_no_sig       PASS  B
+  eip3009_domain     FAIL  C
+  error_handling     PASS  B
+  network_trap       PASS  B
+  => 6/10 (60.0%)
+
+saved /root/x402bench/r_granite-4_0-h-micro.json
+== @cf/meta/llama-3.2-3b-instruct
+  amount_basic       FAIL  0.001667
+  amount_pricing     FAIL  0.0000000000000000000000000000000000000000000000000000000000
+  amount_rounding    FAIL  0.025000000
+  field_fidelity     PASS  0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+  field_payto        PASS  0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8
+  retry_semantics    PASS  B
+  retry_no_sig       PASS  B
+  eip3009_domain     FAIL  C
+  error_handling     PASS  B
+  network_trap       PASS  B
+  => 6/10 (60.0%)
+
+saved /root/x402bench/r_llama-3_2-3b-instruct.json
+ALLDONE

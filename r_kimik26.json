@@ -1,0 +1,75 @@
+{
+  "bench": "x402 Agent Commerce Bench",
+  "version": "0.1",
+  "run": "2026-10-12",
+  "results": [
+    {
+      "model": "@cf/moonshotai/kimi-k2.6",
+      "score": 1,
+      "total": 10,
+      "pct": 10.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "",
+          "pass": false,
+          "secs": 5.9
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "",
+          "pass": false,
+          "secs": 6.2
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000",
+          "pass": true,
+          "secs": 2.1
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "",
+          "pass": false,
+          "secs": 6.0
+        },
+        {
+          "id": "field_payto",
+          "answer": "",
+          "pass": false,
+          "secs": 5.7
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "",
+          "pass": false,
+          "secs": 5.5
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "",
+          "pass": false,
+          "secs": 5.1
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "",
+          "pass": false,
+          "secs": 5.8
+        },
+        {
+          "id": "error_handling",
+          "answer": "",
+          "pass": false,
+          "secs": 6.1
+        },
+        {
+          "id": "network_trap",
+          "answer": "",
+          "pass": false,
+          "secs": 6.1
+        }
+      ]
+    }
+  ]
+}

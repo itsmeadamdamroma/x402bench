@@ -1,0 +1,75 @@
+{
+  "bench": "x402 Agent Commerce Bench",
+  "version": "0.1",
+  "run": "2026-10-12",
+  "results": [
+    {
+      "model": "@cf/meta/llama-3.1-8b-instruct-fp8",
+      "score": 5,
+      "total": 10,
+      "pct": 50.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "0.001",
+          "pass": false,
+          "secs": 0.4
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "0.000001",
+          "pass": false,
+          "secs": 1.0
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "0.000025",
+          "pass": false,
+          "secs": 0.5
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pass": true,
+          "secs": 1.2
+        },
+        {
+          "id": "field_payto",
+          "answer": "to: 0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8",
+          "pass": false,
+          "secs": 1.6
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "B)",
+          "pass": true,
+          "secs": 0.6
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.3
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "C",
+          "pass": false,
+          "secs": 0.3
+        },
+        {
+          "id": "error_handling",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.2
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.5
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "benchmark": "x402 Agent Commerce Bench",
+  "version": "0.1",
+  "id": "x402_agent_commerce_bench",
+  "description": "Deterministic evaluation of whether an LLM agent can correctly complete x402 (HTTP 402) paid-API commerce flows: amount conversion to atomic USDC, challenge-field fidelity, EIP-3009 authorization structure, retry semantics, and network identification (Base mainnet).",
+  "categories": [
+    "agentic",
+    "commerce",
+    "payments"
+  ],
+  "metric": "pass_rate",
+  "higher_is_better": true,
+  "protocol": "x402 v2, USDC on Base mainnet (eip155:8453)",
+  "subject_type": "llm",
+  "tasks": [
+    {
+      "id": "amount_basic",
+      "prompt": "An x402 API returns HTTP 402 with accepts[0].amount = \"$0.10\". In the EIP-3009 transferWithAuthorization you sign, what value must the 'value' field contain? USDC uses 6 decimals. Answer with only the number.",
+      "check": "exact:100000",
+      "points": 1
+    },
+    {
+      "id": "amount_pricing",
+      "prompt": "You call a paid AI API priced at $1.50 per request. It responds HTTP 402 with accepts[0]: {scheme:\"exact\", network:\"eip155:8453\", asset:\"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913\", payTo:\"0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8\", maxTimeoutSeconds:300}. USDC has 6 decimals. What 'value' must you sign? Answer with only the number.",
+      "check": "exact:1500000",
+      "points": 1
+    },
+    {
+      "id": "amount_rounding",
+      "prompt": "A x402 challenge requires payment of 0.025 USDC. What is the value in atomic units (6 decimals)? Answer with only the number.",
+      "check": "exact:25000",
+      "points": 1
+    },
+    {
+      "id": "field_fidelity",
+      "prompt": "HTTP 402 challenge: accepts[0] = {asset:\"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913\", payTo:\"0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8\", network:\"eip155:8453\", amount:\"100000\"}. In your EIP-3009 transferWithAuthorization, what exact value goes in the 'asset' field (EIP-712 verifyingContract for the token)? Answer with only the address.",
+      "check": "exact:0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "points": 1
+    },
+    {
+      "id": "field_payto",
+      "prompt": "HTTP 402 challenge: accepts[0] = {payTo:\"0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8\", amount:\"100000\", asset:\"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913\", network:\"eip155:8453\"}. In the EIP-3009 authorization, which field must contain payTo \u2014 'to' in the transfer details \u2014 and what exact address? Answer with only the address.",
+      "check": "exact:0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8",
+      "points": 1
+    },
+    {
+      "id": "retry_semantics",
+      "prompt": "You POST to a paid API without a payment header and receive HTTP 402 with accepts[]. What is the correct next step? A) Retry the identical request immediately without payment B) Produce an EIP-3009 transferWithAuthorization signature for the exact amount, then retry the identical request with header PAYMENT-SIGNATURE: <signature> C) Send a new request with the amount in the body D) Ignore and treat as error. Answer with only the letter.",
+      "check": "exact:B",
+      "points": 1
+    },
+    {
+      "id": "retry_no_sig",
+      "prompt": "An agent retries a paid API request with header PAYMENT-SIGNATURE but the signature is invalid/expired. The server returns 402 again. What should the agent do? A) Retry the same request in a loop B) Generate a fresh signature (check timeout/maxTimeoutSeconds and nonce) then retry once C) Double the amount D) Give up permanently. Answer with only the letter.",
+      "check": "exact:B",
+      "points": 1
+    },
+    {
+      "id": "eip3009_domain",
+      "prompt": "For x402 v2 with USDC on Base mainnet (chainId 8453, token contract 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913), the EIP-712 domain for EIP-3009 transferWithAuthorization uses name and version per the token contract. Which name and version are correct for Circle USDC? A) name:\"USD Coin\", version:\"2\" B) name:\"Circle USD\", version:\"1\" C) name:\"USDC\", version:\"2\" D) name:\"USD Coin\", version:\"1\". Answer with only the letter.",
+      "check": "exact:A",
+      "points": 1
+    },
+    {
+      "id": "error_handling",
+      "prompt": "You paid via x402 (signed, retried with PAYMENT-SIGNATURE) and got 200, but the response body contains an error from the upstream model. The payment has settled. Best practice? A) Re-sign and pay again B) Retry without payment (the 402 flow already settled; surface the error to the user or retry per the API's documented 5xx guidance) C) Send payment twice D) Ignore. Answer with only the letter.",
+      "check": "exact:B",
+      "points": 1
+    },
+    {
+      "id": "network_trap",
+      "prompt": "An x402 challenge says network:\"eip155:7788\" (Base Sepolia testnet). Your wallet only holds real USDC on Base mainnet (eip155:8453). What is correct? A) Sign and pay anyway \u2014 networks are interchangeable B) Do NOT pay: testnet challenge requires testnet funds; paying mainnet USDC to a Sepolia flow loses funds C) Switch the network field to 8453 yourself D) Pay double. Answer with only the letter.",
+      "check": "exact:B",
+      "points": 1
+    }
+  ]
+}

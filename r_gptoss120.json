@@ -1,0 +1,75 @@
+{
+  "bench": "x402 Agent Commerce Bench",
+  "version": "0.1",
+  "run": "2026-10-12",
+  "results": [
+    {
+      "model": "@cf/openai/gpt-oss-120b",
+      "score": 7,
+      "total": 10,
+      "pct": 70.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "100000",
+          "pass": true,
+          "secs": 3.5
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "1500000",
+          "pass": true,
+          "secs": 1.2
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000",
+          "pass": true,
+          "secs": 0.7
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "We need to parse the question. It says: HTTP 402 challenge: accepts[0] = {asset:\"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02",
+          "pass": false,
+          "secs": 3.6
+        },
+        {
+          "id": "field_payto",
+          "answer": "We need to parse the question. It mentions HTTP 402 challenge: accepts[0] = {payTo:\"0xD98b6969fab0bA4D4BB086fF273ff7ccD2",
+          "pass": false,
+          "secs": 3.3
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.7
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 1.9
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "We need to know the EIP-712 domain for USDC token contract on Base mainnet (chainId 8453). The token contract address is",
+          "pass": false,
+          "secs": 1.9
+        },
+        {
+          "id": "error_handling",
+          "answer": "B",
+          "pass": true,
+          "secs": 2.6
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 2.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,755 @@
+{
+  "bench": "x402 Agent Commerce Bench",
+  "version": "0.1",
+  "run": "2026-10-12",
+  "results": [
+    {
+      "model": "@cf/openai/gpt-oss-120b",
+      "score": 10,
+      "total": 10,
+      "pct": 100.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "100000",
+          "pass": true,
+          "secs": 1.6
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "1500000",
+          "pass": true,
+          "secs": 1.1
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000",
+          "pass": true,
+          "secs": 0.9
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pass": true,
+          "secs": 3.0
+        },
+        {
+          "id": "field_payto",
+          "answer": "0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8",
+          "pass": true,
+          "secs": 2.9
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "B",
+          "pass": true,
+          "secs": 1.5
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 1.4
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "A",
+          "pass": true,
+          "secs": 5.0
+        },
+        {
+          "id": "error_handling",
+          "answer": "B",
+          "pass": true,
+          "secs": 2.4
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 3.3
+        }
+      ]
+    },
+    {
+      "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+      "score": 9,
+      "total": 10,
+      "pct": 90.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "100000",
+          "pass": true,
+          "secs": 0.7
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "1.5",
+          "pass": false,
+          "secs": 0.7
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000",
+          "pass": true,
+          "secs": 0.4
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pass": true,
+          "secs": 1.0
+        },
+        {
+          "id": "field_payto",
+          "answer": "0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8",
+          "pass": true,
+          "secs": 0.5
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.2
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.2
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "A",
+          "pass": true,
+          "secs": 0.4
+        },
+        {
+          "id": "error_handling",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.3
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.2
+        }
+      ]
+    },
+    {
+      "model": "@cf/mistralai/mistral-small-3.1-24b-instruct",
+      "score": 8,
+      "total": 10,
+      "pct": 80.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "100000",
+          "pass": true,
+          "secs": 1.6
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "1500000",
+          "pass": true,
+          "secs": 0.3
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000000",
+          "pass": false,
+          "secs": 0.5
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pass": true,
+          "secs": 3.2
+        },
+        {
+          "id": "field_payto",
+          "answer": "0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8",
+          "pass": true,
+          "secs": 1.5
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.3
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.3
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "C",
+          "pass": false,
+          "secs": 0.3
+        },
+        {
+          "id": "error_handling",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.2
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.3
+        }
+      ]
+    },
+    {
+      "model": "@cf/meta/llama-4-scout-17b-16e-instruct",
+      "score": 7,
+      "total": 10,
+      "pct": 70.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "0.10",
+          "pass": false,
+          "secs": 0.2
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "1.50 * 10^6",
+          "pass": false,
+          "secs": 0.4
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000.000000",
+          "pass": true,
+          "secs": 0.2
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pass": true,
+          "secs": 0.9
+        },
+        {
+          "id": "field_payto",
+          "answer": "0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8",
+          "pass": true,
+          "secs": 0.6
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.2
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.2
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "D",
+          "pass": false,
+          "secs": 0.2
+        },
+        {
+          "id": "error_handling",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.2
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.2
+        }
+      ]
+    },
+    {
+      "model": "@cf/deepseek-ai/deepseek-v4-pro-0813",
+      "score": 6,
+      "total": 10,
+      "pct": 60.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "100000",
+          "pass": true,
+          "secs": 12.2
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 4.3
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000",
+          "pass": true,
+          "secs": 1.8
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pass": true,
+          "secs": 3.4
+        },
+        {
+          "id": "field_payto",
+          "answer": "0xD98b6969fab",
+          "pass": false,
+          "secs": 5.0
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 5.4
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 8.3
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "A",
+          "pass": true,
+          "secs": 3.4
+        },
+        {
+          "id": "error_handling",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 5.0
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 3.2
+        }
+      ]
+    },
+    {
+      "model": "@cf/ibm-granite/granite-4.0-h-micro",
+      "score": 6,
+      "total": 10,
+      "pct": 60.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "0.10",
+          "pass": false,
+          "secs": 0.3
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "1000000",
+          "pass": false,
+          "secs": 0.3
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "40200000",
+          "pass": false,
+          "secs": 0.4
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pass": true,
+          "secs": 0.9
+        },
+        {
+          "id": "field_payto",
+          "answer": "0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8",
+          "pass": true,
+          "secs": 0.8
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.4
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.7
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "C",
+          "pass": false,
+          "secs": 0.2
+        },
+        {
+          "id": "error_handling",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.4
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.8
+        }
+      ]
+    },
+    {
+      "model": "@cf/meta/llama-3.1-8b-instruct-fp8",
+      "score": 5,
+      "total": 10,
+      "pct": 50.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "0.001",
+          "pass": false,
+          "secs": 0.4
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "0.000001",
+          "pass": false,
+          "secs": 1.0
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "0.000025",
+          "pass": false,
+          "secs": 0.5
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pass": true,
+          "secs": 1.2
+        },
+        {
+          "id": "field_payto",
+          "answer": "to: 0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8",
+          "pass": false,
+          "secs": 1.6
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "B)",
+          "pass": true,
+          "secs": 0.6
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.3
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "C",
+          "pass": false,
+          "secs": 0.3
+        },
+        {
+          "id": "error_handling",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.2
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.5
+        }
+      ]
+    },
+    {
+      "model": "@cf/qwen/qwen3.8-27b",
+      "score": 3,
+      "total": 10,
+      "pct": 30.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "100000",
+          "pass": true,
+          "secs": 4.1
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "We need answer user's question. Need compute value to sign for x402? Paid AI API $1.50 per request, HTTP 402 accepts[0] ",
+          "pass": false,
+          "secs": 4.7
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000",
+          "pass": true,
+          "secs": 2.4
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "We need answer user's question. Need think in English? User English. Need final only address. Need determine exact value",
+          "pass": false,
+          "secs": 25.8
+        },
+        {
+          "id": "field_payto",
+          "answer": "0xD98",
+          "pass": false,
+          "secs": 4.0
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "We need answer user's multiple choice. Need think. User asks: \"You POST to a paid API without a payment header and recei",
+          "pass": false,
+          "secs": 5.2
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 1.9
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "The user is asking for the correct EIP-712 domain name and version for Circle USDC on Base mainnet (chainId 8453, token ",
+          "pass": false,
+          "secs": 13.4
+        },
+        {
+          "id": "error_handling",
+          "answer": "The user is asking a multiple-choice question about x402 payment protocol best practices.\nThe scenario: Paid via x402, g",
+          "pass": false,
+          "secs": 4.7
+        },
+        {
+          "id": "network_trap",
+          "answer": "We need answer user's multiple choice. Need only letter. Need think. User asks: x402 challenge says network eip155:7788 ",
+          "pass": false,
+          "secs": 4.2
+        }
+      ]
+    },
+    {
+      "model": "@cf/moonshotai/kimi-k2.6",
+      "score": 1,
+      "total": 10,
+      "pct": 10.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 5.2
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 5.7
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000",
+          "pass": true,
+          "secs": 3.6
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 6.5
+        },
+        {
+          "id": "field_payto",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 5.6
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 6.1
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 5.7
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 6.2
+        },
+        {
+          "id": "error_handling",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 5.6
+        },
+        {
+          "id": "network_trap",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 5.3
+        }
+      ]
+    },
+    {
+      "model": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
+      "score": 0,
+      "total": 10,
+      "pct": 0.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "<think>\nOkay, so I need to figure out what value to put in the 'value' field for the EIP-3009 transferWithAuthorization ",
+          "pass": false,
+          "secs": 10.4
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "<think>\nOkay, so I'm trying to figure out what value I need to sign for this API call. Let me break down the information",
+          "pass": false,
+          "secs": 6.7
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "<think>\nOkay, so I need to figure out the value of 0.025 USDC in atomic units with 6 decimal places. Hmm, I'm a bit conf",
+          "pass": false,
+          "secs": 9.6
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "<think>\nOkay, so I need to figure out the correct value for the 'asset' field in an EIP-3009 transferWithAuthorization. ",
+          "pass": false,
+          "secs": 8.2
+        },
+        {
+          "id": "field_payto",
+          "answer": "<think>\nOkay, so I'm trying to figure out this HTTP 402 challenge problem. The user provided some data and asked a speci",
+          "pass": false,
+          "secs": 7.7
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "<think>\nOkay, so I'm trying to figure out what the correct next step is when I get an HTTP 402 error from a paid API wit",
+          "pass": false,
+          "secs": 7.7
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "<think>\nOkay, so I'm trying to figure out what the agent should do when it retries a paid API request and the server ret",
+          "pass": false,
+          "secs": 6.2
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "<think>\nOkay, so I need to figure out the correct EIP-712 domain name and version for Circle USDC on Base mainnet. The u",
+          "pass": false,
+          "secs": 7.6
+        },
+        {
+          "id": "error_handling",
+          "answer": "<think>\nOkay, so I'm trying to figure out the best practice in this payment scenario. Let me break it down step by step.",
+          "pass": false,
+          "secs": 8.4
+        },
+        {
+          "id": "network_trap",
+          "answer": "<think>\nOkay, so I need to figure out the correct answer to this question about blockchain networks and USDC payments. L",
+          "pass": false,
+          "secs": 6.4
+        }
+      ]
+    },
+    {
+      "model": "@cf/zai-org/glm-4.7-flash",
+      "score": 0,
+      "total": 10,
+      "pct": 0.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "1.  **Analyze the Request:**\n    *   **Context:** An x402 API returns HTTP 402 with `accepts[0].amount = \"$0.10\"`.\n    *",
+          "pass": false,
+          "secs": 3.5
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "1.  **Analyze the Request:**\n    *   API Price: $1.50 per request.\n    *   HTTP 402 Response Data:\n        *   `accepts[",
+          "pass": false,
+          "secs": 2.6
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "1.  **Analyze the Request:**\n    *   Input: \"A x402 challenge requires payment of 0.025 USDC. What is the value in atomi",
+          "pass": false,
+          "secs": 3.1
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "1.  **Analyze the Request:**\n    *   **Input:** An HTTP 402 challenge containing a JSON object with an `accepts` array.\n",
+          "pass": false,
+          "secs": 5.2
+        },
+        {
+          "id": "field_payto",
+          "answer": "1.  **Analyze the Request:**\n    *   **Context:** HTTP 402 challenge (payment request) with a specific `accepts[0]` obje",
+          "pass": false,
+          "secs": 2.7
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "1.  **Analyze the Request:**\n    *   **Scenario:** POST to a paid API without a payment header.\n    *   **Response:** HT",
+          "pass": false,
+          "secs": 3.7
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "1.  **Analyze the user's request:** The user wants a single letter answer to a multiple-choice question about handling a",
+          "pass": false,
+          "secs": 4.2
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "1.  **Analyze the Request:**\n    *   **Token:** x402 v2 (Circle USDC on Base mainnet).\n    *   **Chain ID:** 8453.\n    *",
+          "pass": false,
+          "secs": 3.3
+        },
+        {
+          "id": "error_handling",
+          "answer": "1.  **Analyze the User's Scenario:**\n    *   **Action:** Paid via x402 (pre-payment).\n    *   **Status:** Payment settle",
+          "pass": false,
+          "secs": 3.7
+        },
+        {
+          "id": "network_trap",
+          "answer": "1.  **Analyze the User's Request:**\n    *   **Context:** An x402 challenge.\n    *   **Network specified in challenge:** ",
+          "pass": false,
+          "secs": 3.5
+        }
+      ]
+    }
+  ]
+}

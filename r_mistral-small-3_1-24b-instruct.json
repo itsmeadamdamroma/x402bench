@@ -1,0 +1,75 @@
+{
+  "bench": "x402 Agent Commerce Bench",
+  "version": "0.1",
+  "run": "2026-10-12",
+  "results": [
+    {
+      "model": "@cf/mistralai/mistral-small-3.1-24b-instruct",
+      "score": 8,
+      "total": 10,
+      "pct": 80.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "100000",
+          "pass": true,
+          "secs": 1.6
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "1500000",
+          "pass": true,
+          "secs": 0.3
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000000",
+          "pass": false,
+          "secs": 0.5
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pass": true,
+          "secs": 3.2
+        },
+        {
+          "id": "field_payto",
+          "answer": "0xD98b6969fab0bA4D4BB086fF273ff7ccD284CEe8",
+          "pass": true,
+          "secs": 1.5
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.3
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.3
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "C",
+          "pass": false,
+          "secs": 0.3
+        },
+        {
+          "id": "error_handling",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.2
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 0.3
+        }
+      ]
+    }
+  ]
+}

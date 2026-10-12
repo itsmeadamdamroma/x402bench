@@ -1,0 +1,75 @@
+{
+  "bench": "x402 Agent Commerce Bench",
+  "version": "0.1",
+  "run": "2026-10-12",
+  "results": [
+    {
+      "model": "@cf/deepseek-ai/deepseek-v4-pro-0813",
+      "score": 6,
+      "total": 10,
+      "pct": 60.0,
+      "results": [
+        {
+          "id": "amount_basic",
+          "answer": "100000",
+          "pass": true,
+          "secs": 12.2
+        },
+        {
+          "id": "amount_pricing",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 4.3
+        },
+        {
+          "id": "amount_rounding",
+          "answer": "25000",
+          "pass": true,
+          "secs": 1.8
+        },
+        {
+          "id": "field_fidelity",
+          "answer": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "pass": true,
+          "secs": 3.4
+        },
+        {
+          "id": "field_payto",
+          "answer": "0xD98b6969fab",
+          "pass": false,
+          "secs": 5.0
+        },
+        {
+          "id": "retry_semantics",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 5.4
+        },
+        {
+          "id": "retry_no_sig",
+          "answer": "B",
+          "pass": true,
+          "secs": 8.3
+        },
+        {
+          "id": "eip3009_domain",
+          "answer": "A",
+          "pass": true,
+          "secs": 3.4
+        },
+        {
+          "id": "error_handling",
+          "answer": "__EMPTY__ length",
+          "pass": false,
+          "secs": 5.0
+        },
+        {
+          "id": "network_trap",
+          "answer": "B",
+          "pass": true,
+          "secs": 3.2
+        }
+      ]
+    }
+  ]
+}
