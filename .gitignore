@@ -3,3 +3,4 @@ run.log
 smoke.json
 push.sh
 __pycache__/
+clean.sh
